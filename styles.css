@@ -6,23 +6,56 @@ body {
     font-family: sans-serif;
 }
 
+button {
+    background-color: #8026fc;
+    border: 2px solid #0c001c;
+    font-size: 28px;
+    width: 240px;
+    height: 140px;
+}
+
+button:hover {
+    background-color: #9142ff;
+}
+
+button:active {
+    font-size: 24px;
+    background-color: #b37dff;
+}
+
 .main-container {
-    height: 80vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 16px;
 }
 
 .header {
     color: #0c001c;
     font-size: 36px;
-    margin-bottom: 32px;
 }
 
 .grid-container {
     background-color: #7021de;
     border: 2px solid #0c001c;
-    height: 600px;
-    width: 600px;
+    height: 640px;
+    width: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.grid-container div {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #8026fc;
+}
+
+/* class to be added with JS */
+.hovered {
+    background-color: #9f59ff;
 }
