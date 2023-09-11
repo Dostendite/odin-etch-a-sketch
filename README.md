@@ -1,9 +1,9 @@
 # TOP No.4 - Etch-A-Sketch
 
-## Missing features:
+## Pending:
 1. Reset Button
 2. Rainbow Mode
-
-## Pending further styling / decoration
+3. Improve styling / decoration
+4. Add background
 
 The game's working now though!
