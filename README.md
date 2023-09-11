@@ -1,10 +1,11 @@
-# TOP No.4 - Etch-A-Sketch
+# TOP No.4 Project - Etch-A-Sketch
 
 ## Pending:
-1. Reset Button
-2. Rainbow Mode
-3. Improve styling / decoration
-4. Add background
-5. Draw w/ drag/click (not hover)
+1. Reset Button functionality
+2. Rainbow Mode functionality
+3. Draw w/ click/drag (not hover)
+4. Do Extra Credit Challenges
+5. Improve styling / decoration
+6. Add background
 
 The game's working now though!
