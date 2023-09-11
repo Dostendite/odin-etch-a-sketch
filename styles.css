@@ -9,9 +9,9 @@ body {
 button {
     background-color: #8026fc;
     border: 2px solid #0c001c;
-    font-size: 28px;
-    width: 240px;
-    height: 140px;
+    font-size: 24px;
+    width: 200px;
+    height: 60px;
 }
 
 button:hover {
@@ -24,7 +24,7 @@ button:active {
 }
 
 .main-container {
-    height: 90vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,6 +42,7 @@ button:active {
     border: 2px solid #0c001c;
     height: 640px;
     width: 640px;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -54,8 +55,9 @@ button:active {
     height: 40px;
     background-color: #8026fc;
 }
-
-/* class to be added with JS */
-.hovered {
-    background-color: #9f59ff;
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    gap: 16px;
 }
