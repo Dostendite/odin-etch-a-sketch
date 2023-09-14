@@ -1,6 +1,6 @@
-# TOP No.4 Project - Etch-A-Sketch
+# Odin Etch-A-Sketch
 
-[Live preview](https://dostendite.github.io/odin-etch-a-sketch/)
+👾 [**Live preview**](https://dostendite.github.io/odin-etch-a-sketch/)
 
 ## Pending changes:
 1. Reset Button functionality
