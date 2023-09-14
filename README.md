@@ -1,5 +1,7 @@
 # TOP No.4 Project - Etch-A-Sketch
 
+[Live preview](https://dostendite.github.io/odin-etch-a-sketch/)
+
 ## Pending changes:
 1. Reset Button functionality
 2. Rainbow Mode functionality
