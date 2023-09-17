@@ -10,7 +10,14 @@ const GRID_SIZE = 640;
 const gridDivs = gridContainer.children;
 // const rainbowMode = false;
 
+let gridsPerSide
+
 setGridButton.addEventListener("click", setGrid);
+resetButton.addEventListener("click", () => {
+    for (let gridDiv of gridDivs) {
+      gridDiv.style.backgroundColor = "#f5f2df";
+    }
+});
 
 // rainbowModeButton.addEventListener("click", function () {
 //     rainbowMode = true;
@@ -30,7 +37,6 @@ function setGrid(divsPerSide) {
     if (divsPerSide === "default") {
         divsPerSide = 16;
     } else {
-
         divsPerSide = parseInt(window.prompt(`Select number of squares
         per side (4 to 100)`, 4))
     }
@@ -50,14 +56,14 @@ function setGrid(divsPerSide) {
         addDiv();
     }
 
-    for (gridDiv of gridDivs) {
+    for (let gridDiv of gridDivs) {
 
         gridDiv.style.width = squareDimensions;
         gridDiv.style.height = squareDimensions;
 
         // Trail / hover effect
-        gridDiv.addEventListener("mouseenter", (event) => {
-
+        gridDiv.addEventListener("mouseover", (event) => {
+    
             event.target.style.backgroundColor = "#1a1918";
 
         })

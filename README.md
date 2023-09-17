@@ -2,11 +2,10 @@
 
 👾 [**Live preview**](https://dostendite.github.io/odin-etch-a-sketch/)
 
-**Now with improved styling!**
+**Now with improved styling & Functionality!**
 
 ## Pending changes:
-1. Reset Button functionality
-2. Rainbow Mode functionality
-3. Draw w/ click/drag (not hover)
-4. Do Extra Credit Challenges
-5. Add background
+1. Rainbow Mode functionality
+2. Draw w/ click/drag (not hover)
+3. Do Extra Credit Challenges
+4. Add background
