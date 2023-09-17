@@ -1,5 +1,3 @@
-// create a 16x16 grid of square divs
-// using the DOM inside grid-container
 
 const gridContainer = document.querySelector(".grid-container");
 const setGridButton = document.querySelector("#set-grid-button");
@@ -19,7 +17,7 @@ resetButton.addEventListener("click", () => {
 
 rainbowModeButton.addEventListener("click", function () {
     rainbowMode ? rainbowMode = false : rainbowMode = true;
-})
+});
 
 colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "black", "white"];
 
@@ -33,7 +31,7 @@ function getRandomColor() {
 function setGrid(divsPerSide) {
 
     if (divsPerSide === "default") {
-        divsPerSide = 16;
+        divsPerSide = 24;
     } else {
         divsPerSide = parseInt(window.prompt(`Select number of squares
         per side (4 to 100)`, 4))
@@ -67,7 +65,7 @@ function setGrid(divsPerSide) {
             } else {
                 event.target.style.backgroundColor = "#1a1918";
             }
-        })
+        });
     }
 }
 
