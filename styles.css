@@ -26,7 +26,7 @@ button:active {
 }
 
 #set-grid-button {
-    padding: 8px;
+    padding: 12px;
 }
 
 .main-container {
@@ -35,14 +35,14 @@ button:active {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 .header {
     margin-top: 12px;
     color: #0c001c;
     background-color: #e8202e;
-    font-size: 36px;
+    font-size: 32px;
     padding: 8px;
     border: 3px solid black;
     border-radius: 3px;
