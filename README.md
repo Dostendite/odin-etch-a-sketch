@@ -7,5 +7,5 @@
 2. Rainbow Mode functionality
 3. Draw w/ click/drag (not hover)
 4. Do Extra Credit Challenges
-5. Improve styling / decoration
+5. Improve styling / decoration - Coming soon!
 6. Add background
