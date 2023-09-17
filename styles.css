@@ -1,14 +1,16 @@
 body {
     box-sizing: border-box;
-    background-color: #9142ff;
+    background-color: #d4cbd2;
     height: 100vh;
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 button {
-    background-color: #8026fc;
-    border: 2px solid #0c001c;
+    background-color: #e8202e;
+    color: white;
+    border: 3px solid #0c001c;
+    border-radius: 3px;
     font-size: 24px;
     width: 200px;
     height: 60px;
@@ -23,6 +25,10 @@ button:active {
     background-color: #b37dff;
 }
 
+#set-grid-button {
+    padding: 8px;
+}
+
 .main-container {
     height: 95vh;
     display: flex;
@@ -33,13 +39,20 @@ button:active {
 }
 
 .header {
+    margin-top: 12px;
     color: #0c001c;
+    background-color: #e8202e;
     font-size: 36px;
+    padding: 8px;
+    border: 3px solid black;
+    border-radius: 3px;
+    color: white;
 }
 
 .grid-container {
-    background-color: #7021de;
-    border: 2px solid #0c001c;
+    background-color: #e8202e;
+    border: 3px solid black;
+    border-radius: 3px;
     height: 640px;
     width: 640px;
     padding: 8px;
@@ -53,7 +66,7 @@ button:active {
     margin: 0;
     width: 40px;
     height: 40px;
-    background-color: #8026fc;
+    background-color: #f5f2df;
 }
 .button-container {
     display: flex;

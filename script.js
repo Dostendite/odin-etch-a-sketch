@@ -58,7 +58,7 @@ function setGrid(divsPerSide) {
         // Trail / hover effect
         gridDiv.addEventListener("mouseenter", (event) => {
 
-            event.target.style.backgroundColor = "#9f59ff";
+            event.target.style.backgroundColor = "#1a1918";
 
         })
     }
