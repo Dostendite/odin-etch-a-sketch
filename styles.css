@@ -17,12 +17,12 @@ button {
 }
 
 button:hover {
-    background-color: #9142ff;
+    background-color: #e32d46;
 }
 
 button:active {
-    font-size: 24px;
-    background-color: #b37dff;
+    position: relative;
+    top: 2px;
 }
 
 #set-grid-button {
