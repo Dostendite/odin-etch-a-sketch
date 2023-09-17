@@ -8,9 +8,7 @@ const rainbowModeButton = document.querySelector("#rainbow-button")
 
 const GRID_SIZE = 640;
 const gridDivs = gridContainer.children;
-// const rainbowMode = false;
-
-let gridsPerSide
+let rainbowMode = false;
 
 setGridButton.addEventListener("click", setGrid);
 resetButton.addEventListener("click", () => {
@@ -19,11 +17,11 @@ resetButton.addEventListener("click", () => {
     }
 });
 
-// rainbowModeButton.addEventListener("click", function () {
-//     rainbowMode = true;
-// })
+rainbowModeButton.addEventListener("click", function () {
+    rainbowMode ? rainbowMode = false : rainbowMode = true;
+})
 
-// colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "black", "white"];
+colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "black", "white"];
 
 function getRandomColor() {
 
@@ -48,7 +46,7 @@ function setGrid(divsPerSide) {
     // GRID_SIZE / divsPerSide = squareDimensions
     let squareDimensions = `${GRID_SIZE / divsPerSide}px`;
 
-    // Remove all divs/squares from canvas 
+    // Remove all divs/squares from canvas
     gridContainer.innerHTML = "";
 
     // Fill canvas with squares
@@ -63,9 +61,12 @@ function setGrid(divsPerSide) {
 
         // Trail / hover effect
         gridDiv.addEventListener("mouseover", (event) => {
-    
-            event.target.style.backgroundColor = "#1a1918";
 
+            if (rainbowMode === true) {
+                event.target.style.backgroundColor = getRandomColor();
+            } else {
+                event.target.style.backgroundColor = "#1a1918";
+            }
         })
     }
 }
