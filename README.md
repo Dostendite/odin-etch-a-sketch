@@ -8,3 +8,4 @@
 1. Draw w/ click/drag (not hover)
 2. Do Extra Credit Challenges
 3. Add background
+4. Fading out effect (optional)
