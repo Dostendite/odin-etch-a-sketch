@@ -1,3 +1,9 @@
+// For code refactoring:
+// Replace the event listener
+// anonymous functions by functions defined outside them
+// can do button.onclick = () => function()
+// instead of eventlistener
+// (this can also be useful for RPS)
 
 const gridContainer = document.querySelector(".grid-container");
 const setGridButton = document.querySelector("#set-grid-button");
