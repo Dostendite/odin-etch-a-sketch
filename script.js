@@ -19,7 +19,8 @@ rainbowModeButton.addEventListener("click", function () {
     rainbowMode ? rainbowMode = false : rainbowMode = true;
 });
 
-colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "black", "white"];
+colors = ["red", "blue", "lime", "yellow",
+          "magenta", "cyan", "black", "white"];
 
 function getRandomColor() {
     let randomNumber = ~~(Math.random() * 8)
@@ -30,10 +31,9 @@ function setGrid(divsPerSide) {
     if (divsPerSide === "default") {
         divsPerSide = 24;
     } else {
-        divsPerSide = parseInt(window.prompt(`Select number of squares
-        per side (4 to 100)`, 4))
+        divsPerSide = parseInt(window.prompt(
+        `Select number of squares per side (4-100)`, 4))
     }
-    
     let totalDivs = (divsPerSide * divsPerSide) - 1;
     let squareDimensions = `${GRID_SIZE / divsPerSide}px`;
     gridContainer.innerHTML = "";
@@ -52,7 +52,6 @@ function setGrid(divsPerSide) {
         });
     }
 }
-
 function addDiv() {
     const newDiv = document.createElement("div");
     gridContainer.appendChild(newDiv);
