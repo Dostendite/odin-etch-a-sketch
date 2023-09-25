@@ -22,44 +22,28 @@ rainbowModeButton.addEventListener("click", function () {
 colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "black", "white"];
 
 function getRandomColor() {
-
     let randomNumber = ~~(Math.random() * 8)
-
     return colors[randomNumber];
 }
 
 function setGrid(divsPerSide) {
-
     if (divsPerSide === "default") {
         divsPerSide = 24;
     } else {
         divsPerSide = parseInt(window.prompt(`Select number of squares
         per side (4 to 100)`, 4))
     }
-
-    // Total amount of squares to generate = ivsPerSide²
-
+    
     let totalDivs = (divsPerSide * divsPerSide) - 1;
-
-    // GRID_SIZE / divsPerSide = squareDimensions
     let squareDimensions = `${GRID_SIZE / divsPerSide}px`;
-
-    // Remove all divs/squares from canvas
     gridContainer.innerHTML = "";
-
-    // Fill canvas with squares
     for (let i = 0; i <= totalDivs; i++) {
         addDiv();
     }
-
     for (let gridDiv of gridDivs) {
-
         gridDiv.style.width = squareDimensions;
         gridDiv.style.height = squareDimensions;
-
-        // Trail / hover effect
         gridDiv.addEventListener("mouseover", (event) => {
-
             if (rainbowMode === true) {
                 event.target.style.backgroundColor = getRandomColor();
             } else {
@@ -74,5 +58,4 @@ function addDiv() {
     gridContainer.appendChild(newDiv);
 }
 
-// Default value
 setGrid("default");
