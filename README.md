@@ -9,3 +9,4 @@
 2. Do Extra Credit Challenges
 3. Add background
 4. Fading out effect (optional)
+5. Refactor code
