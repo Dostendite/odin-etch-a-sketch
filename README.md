@@ -5,8 +5,7 @@
 **Now with improved styling & Functionality!**
 
 ## Pending changes:
-1. Draw w/ click/drag (not hover)
+1. Draw w/ click/drag
 2. Do Extra Credit Challenges
 3. Add background
 4. Fading out effect (optional)
-5. Refactor code
