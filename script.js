@@ -15,12 +15,11 @@ const GRID_SIZE = 600;
 const gridDivs = gridContainer.children;
 
 let rainbowMode = false;
-colors = ["red", "blue", "lime", "yellow",
-          "magenta", "cyan", "white"];
+colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "white"];
 
-setGridButton.addEventListener("click", setGrid);
-resetButton.addEventListener("click", clearGrid)
-rainbowModeButton.addEventListener("click", setRainbowMode)
+setGridButton.onclick = setGrid
+resetButton.onclick = clearGrid
+rainbowModeButton.onclick = setRainbowMode
 
 function setGrid(divsPerSide) {
     divsPerSide === "default" ? divsPerSide = 16 : divsPerSide = getDivAmount();
@@ -51,18 +50,18 @@ function getDivAmount() {
     return divsPerSide;
 }
 
-function getRandomColor() {
-    let randomNumber = ~~(Math.random() * 7)
-    return colors[randomNumber];
+function addDiv() {
+    const newDiv = document.createElement("div");
+    gridContainer.appendChild(newDiv);
 }
 
 function setRainbowMode() {
     rainbowMode ? rainbowMode = false : rainbowMode = true;
 }
 
-function addDiv() {
-    const newDiv = document.createElement("div");
-    gridContainer.appendChild(newDiv);
+function getRandomColor() {
+    let randomNumber = ~~(Math.random() * 7)
+    return colors[randomNumber];
 }
 
 function clearGrid() {
