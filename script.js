@@ -23,7 +23,6 @@ resetButton.addEventListener("click", clearGrid)
 rainbowModeButton.addEventListener("click", setRainbowMode)
 
 function setGrid(divsPerSide = 16) {
-
     if (!divsPerSide) {
         divsPerSide = parseInt(window.prompt(
         `Select number of squares per side (4-100)`, 4))
@@ -35,6 +34,7 @@ function setGrid(divsPerSide = 16) {
     for (let i = 0; i <= totalDivs; i++) {
         addDiv();
     }
+
     for (let gridDiv of gridDivs) {
         gridDiv.style.width = squareDimensions;
         gridDiv.style.height = squareDimensions;
