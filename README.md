@@ -4,8 +4,7 @@
 
 **Now with improved styling & Functionality!**
 
-## Pending changes:
+## Possible improvements:
 1. Draw w/ click/drag
-2. Do Extra Credit Challenges
+2. Do Extra Credit Challenge
 3. Add background
-4. Fading out effect (optional)
