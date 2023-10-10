@@ -1,25 +1,17 @@
-// For code refactoring:
-// Replace the event listener
-// anonymous functions by functions defined outside them
-// can do button.onclick = () => function()
-// instead of eventlistener
-// (this can also be useful for RPS)
-
-// only draw when holding down click
 
 const gridContainer = document.querySelector(".grid-container");
 const setGridButton = document.querySelector("#set-grid-button");
 const resetButton = document.querySelector("#reset-button");
 const rainbowModeButton = document.querySelector("#rainbow-button")
-const GRID_SIZE = 600;
 const gridDivs = gridContainer.children;
-
-let rainbowMode = false;
-colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "white"];
 
 setGridButton.onclick = setGrid
 resetButton.onclick = clearGrid
 rainbowModeButton.onclick = setRainbowMode
+
+const GRID_SIZE = 600;
+let rainbowMode = false;
+colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "white"];
 
 function setGrid(divsPerSide) {
     divsPerSide === "default" ? divsPerSide = 16 : divsPerSide = getDivAmount();
@@ -27,6 +19,7 @@ function setGrid(divsPerSide) {
     let totalDivs = (divsPerSide * divsPerSide) - 1;
     let squareDimensions = `${GRID_SIZE / divsPerSide}px`;
     gridContainer.innerHTML = "";
+
     for (let i = 0; i <= totalDivs; i++) {
         addDiv();
     }
