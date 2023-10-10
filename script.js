@@ -5,19 +5,14 @@
 // instead of eventlistener
 // (this can also be useful for RPS)
 
-
-// todo
-
-// remove black from rainbow
 // only draw when holding down click
-// maybe move buttons to the left of the canvas
 
 const gridContainer = document.querySelector(".grid-container");
 const setGridButton = document.querySelector("#set-grid-button");
 const resetButton = document.querySelector("#reset-button");
 const rainbowModeButton = document.querySelector("#rainbow-button")
 
-const GRID_SIZE = 640;
+const GRID_SIZE = 600;
 const gridDivs = gridContainer.children;
 let rainbowMode = false;
 
