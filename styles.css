@@ -14,10 +14,11 @@ button {
     font-size: 24px;
     width: 200px;
     height: 60px;
+    transition: 100ms;
 }
 
 button:hover {
-    background-color: #e32d46;
+    transform: scale(1.1)
 }
 
 button:active {

@@ -22,11 +22,8 @@ setGridButton.addEventListener("click", setGrid);
 resetButton.addEventListener("click", clearGrid)
 rainbowModeButton.addEventListener("click", setRainbowMode)
 
-function setGrid(divsPerSide = 16) {
-    if (!divsPerSide) {
-        divsPerSide = parseInt(window.prompt(
-        `Select number of squares per side (4-100)`, 4))
-    }
+function setGrid(divsPerSide) {
+    divsPerSide === "default" ? divsPerSide = 16 : divsPerSide = getDivAmount();
 
     let totalDivs = (divsPerSide * divsPerSide) - 1;
     let squareDimensions = `${GRID_SIZE / divsPerSide}px`;
@@ -48,6 +45,21 @@ function setGrid(divsPerSide = 16) {
     }
 }
 
+function getDivAmount() {
+    divsPerSide = parseInt(window.prompt(
+    `Select number of squares per side (4-100)`, 16));
+    return divsPerSide;
+}
+
+function getRandomColor() {
+    let randomNumber = ~~(Math.random() * 7)
+    return colors[randomNumber];
+}
+
+function setRainbowMode() {
+    rainbowMode ? rainbowMode = false : rainbowMode = true;
+}
+
 function addDiv() {
     const newDiv = document.createElement("div");
     gridContainer.appendChild(newDiv);
@@ -59,14 +71,4 @@ function clearGrid() {
     }
 }
 
-function setRainbowMode() {
-    rainbowMode ? rainbowMode = false : rainbowMode = true;
-}
-
-function getRandomColor() {
-    let randomNumber = ~~(Math.random() * 7)
-    return colors[randomNumber];
-}
-
-
-setGrid(16);
+setGrid("default");
