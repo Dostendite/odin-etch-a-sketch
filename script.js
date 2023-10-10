@@ -11,37 +11,24 @@ const gridContainer = document.querySelector(".grid-container");
 const setGridButton = document.querySelector("#set-grid-button");
 const resetButton = document.querySelector("#reset-button");
 const rainbowModeButton = document.querySelector("#rainbow-button")
-
 const GRID_SIZE = 600;
 const gridDivs = gridContainer.children;
+
 let rainbowMode = false;
-
-setGridButton.addEventListener("click", setGrid);
-resetButton.addEventListener("click", () => {
-    for (let gridDiv of gridDivs) {
-      gridDiv.style.backgroundColor = "#f5f2df";
-    }
-});
-
-rainbowModeButton.addEventListener("click", function () {
-    rainbowMode ? rainbowMode = false : rainbowMode = true;
-});
-
 colors = ["red", "blue", "lime", "yellow",
           "magenta", "cyan", "white"];
 
-function getRandomColor() {
-    let randomNumber = ~~(Math.random() * 8)
-    return colors[randomNumber];
-}
+setGridButton.addEventListener("click", setGrid);
+resetButton.addEventListener("click", clearGrid)
+rainbowModeButton.addEventListener("click", setRainbowMode)
 
-function setGrid(divsPerSide) {
-    if (divsPerSide === "default") {
-        divsPerSide = 24;
-    } else {
+function setGrid(divsPerSide = 16) {
+
+    if (!divsPerSide) {
         divsPerSide = parseInt(window.prompt(
         `Select number of squares per side (4-100)`, 4))
     }
+
     let totalDivs = (divsPerSide * divsPerSide) - 1;
     let squareDimensions = `${GRID_SIZE / divsPerSide}px`;
     gridContainer.innerHTML = "";
@@ -60,9 +47,26 @@ function setGrid(divsPerSide) {
         });
     }
 }
+
 function addDiv() {
     const newDiv = document.createElement("div");
     gridContainer.appendChild(newDiv);
 }
 
-setGrid("default");
+function clearGrid() {
+    for (let gridDiv of gridDivs) {
+        gridDiv.style.backgroundColor = "#f5f2df"
+    }
+}
+
+function setRainbowMode() {
+    rainbowMode ? rainbowMode = false : rainbowMode = true;
+}
+
+function getRandomColor() {
+    let randomNumber = ~~(Math.random() * 7)
+    return colors[randomNumber];
+}
+
+
+setGrid(16);
