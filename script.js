@@ -5,6 +5,13 @@
 // instead of eventlistener
 // (this can also be useful for RPS)
 
+
+// todo
+
+// remove black from rainbow
+// only draw when holding down click
+// maybe move buttons to the left of the canvas
+
 const gridContainer = document.querySelector(".grid-container");
 const setGridButton = document.querySelector("#set-grid-button");
 const resetButton = document.querySelector("#reset-button");
@@ -26,7 +33,7 @@ rainbowModeButton.addEventListener("click", function () {
 });
 
 colors = ["red", "blue", "lime", "yellow",
-          "magenta", "cyan", "black", "white"];
+          "magenta", "cyan", "white"];
 
 function getRandomColor() {
     let randomNumber = ~~(Math.random() * 8)
