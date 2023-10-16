@@ -4,10 +4,10 @@
 
 **Now with improved styling & Functionality!**
 
-## Known bugs:
+### Known bugs:
 - Grid sometimes breaks when being resized on Firefox
 
-## Possible improvements:
+### Possible improvements:
 1. Draw w/ click/drag
 2. Do Extra Credit Challenge
 3. Add background
