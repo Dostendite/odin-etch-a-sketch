@@ -5,7 +5,7 @@
 **Now with improved styling & Functionality!**
 
 ## Known bugs:
-- Grid breaks when resized on Firefox sometimes
+- Grid sometimes breaks when being resized on Firefox
 
 ## Possible improvements:
 1. Draw w/ click/drag
