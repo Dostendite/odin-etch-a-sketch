@@ -1,4 +1,4 @@
-const DEFAULT_CANVAS_COLOR = "f5f2df";
+const DEFAULT_CANVAS_COLOR = "#f5f2df";
 const DEFAULT_BRUSH_COLOR = "#1a1918";
 const GRID_SIZE = 600;
 const colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "white"];
@@ -17,7 +17,6 @@ rainbowModeButton.onclick = setRainbowMode
 
 function setGrid(divsPerSide) {
     divsPerSide === "default" ? divsPerSide = 16 : divsPerSide = promptDivAmount();
-
     let totalDivs = (divsPerSide * divsPerSide) - 1;
     let squareDimensions = `${GRID_SIZE / divsPerSide}px`;
     gridContainer.innerHTML = "";
@@ -29,15 +28,18 @@ function setGrid(divsPerSide) {
     for (let gridDiv of gridDivs) {
         gridDiv.style.width = squareDimensions;
         gridDiv.style.height = squareDimensions;
-        gridDiv.addEventListener("mouseover", (event) => {
-            if (rainbowMode === true) {
-                event.target.style.backgroundColor = getRandomColor();
-            } else {
-                event.target.style.backgroundColor = "#1a1918";
-            }
-        });
+        gridDiv.addEventListener("mouseover", paintOnGrid);
     }
 }
+
+function paintOnGrid(e) {
+    if (rainbowMode) {
+        e.target.style.backgroundColor = getRandomColor();
+    } else {
+        e.target.style.backgroundColor = DEFAULT_BRUSH_COLOR;
+    }
+}
+
 
 function promptDivAmount() {
     divsPerSide = parseInt(window.prompt(
@@ -60,13 +62,13 @@ function setRainbowMode() {
 }
 
 function getRandomColor() {
-    let randomNumber = ~~(Math.random() * 7)
+    let randomNumber = Math.floor(Math.random() * 7)
     return colors[randomNumber];
 }
 
 function clearGrid() {
     for (let gridDiv of gridDivs) {
-        gridDiv.style.backgroundColor = "#f5f2df"
+        gridDiv.style.backgroundColor = DEFAULT_CANVAS_COLOR
     }
 }
 
