@@ -22,13 +22,7 @@ function setGrid(divsPerSide) {
     gridContainer.innerHTML = "";
 
     for (let i = 0; i <= totalDivs; i++) {
-        addDiv();
-    }
-
-    for (let gridDiv of gridDivs) {
-        gridDiv.style.width = squareDimensions;
-        gridDiv.style.height = squareDimensions;
-        gridDiv.addEventListener("mouseover", paintOnGrid);
+        addDiv(squareDimensions);
     }
 }
 
@@ -39,7 +33,6 @@ function paintOnGrid(e) {
         e.target.style.backgroundColor = DEFAULT_BRUSH_COLOR;
     }
 }
-
 
 function promptDivAmount() {
     divsPerSide = parseInt(window.prompt(
@@ -52,9 +45,12 @@ function promptDivAmount() {
     return divsPerSide;
 }
 
-function addDiv() {
-    const newDiv = document.createElement("div");
-    gridContainer.appendChild(newDiv);
+function addDiv(squareDimensions) {
+    const gridDiv = document.createElement("div");
+    gridContainer.appendChild(gridDiv);
+    gridDiv.style.width = squareDimensions;
+    gridDiv.style.height = squareDimensions;
+    gridDiv.addEventListener("mouseover", paintOnGrid);
 }
 
 function setRainbowMode() {
@@ -72,4 +68,6 @@ function clearGrid() {
     }
 }
 
-setGrid("default");
+window.onload = () => {
+    setGrid("default");
+}
