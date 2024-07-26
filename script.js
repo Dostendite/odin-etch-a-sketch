@@ -1,3 +1,9 @@
+const DEFAULT_CANVAS_COLOR = "f5f2df";
+const DEFAULT_BRUSH_COLOR = "#1a1918";
+const GRID_SIZE = 600;
+const colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "white"];
+
+let rainbowMode = false;
 
 const gridContainer = document.querySelector(".grid-container");
 const setGridButton = document.querySelector("#set-grid-button");
@@ -9,12 +15,8 @@ setGridButton.onclick = setGrid
 resetButton.onclick = clearGrid
 rainbowModeButton.onclick = setRainbowMode
 
-const GRID_SIZE = 600;
-let rainbowMode = false;
-colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "white"];
-
 function setGrid(divsPerSide) {
-    divsPerSide === "default" ? divsPerSide = 16 : divsPerSide = getDivAmount();
+    divsPerSide === "default" ? divsPerSide = 16 : divsPerSide = promptDivAmount();
 
     let totalDivs = (divsPerSide * divsPerSide) - 1;
     let squareDimensions = `${GRID_SIZE / divsPerSide}px`;
@@ -37,9 +39,14 @@ function setGrid(divsPerSide) {
     }
 }
 
-function getDivAmount() {
+function promptDivAmount() {
     divsPerSide = parseInt(window.prompt(
-    `Select number of squares per side (4-100)`, 16));
+        `Select number of squares per side (4-100)`, 16));
+
+    if (divsPerSide > 100 || divsPerSide < 4) {
+        promptDivAmount();
+    }
+
     return divsPerSide;
 }
 
