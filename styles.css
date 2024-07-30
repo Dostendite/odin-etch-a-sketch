@@ -65,8 +65,6 @@ button:active {
 
 .grid-container div {
     margin: 0;
-    width: 40px;
-    height: 40px;
     background-color: #f5f2df;
 }
 
