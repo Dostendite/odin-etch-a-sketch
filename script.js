@@ -18,7 +18,7 @@ rainbowModeButton.onclick = setRainbowMode
 function setGrid(divsPerSide) {
     divsPerSide === "default" ? divsPerSide = 16 : divsPerSide = promptDivAmount();
     let totalDivs = (divsPerSide * divsPerSide) - 1;
-    let squareDimensions = `${GRID_SIZE / divsPerSide}px`;
+    let squareDimensions = GRID_SIZE / divsPerSide
     gridContainer.innerHTML = "";
 
     for (let i = 0; i <= totalDivs; i++) {
@@ -48,8 +48,8 @@ function promptDivAmount() {
 function addDiv(squareDimensions) {
     const gridDiv = document.createElement("div");
     gridContainer.appendChild(gridDiv);
-    gridDiv.style.width = squareDimensions;
-    gridDiv.style.height = squareDimensions;
+    gridDiv.style.width = `${squareDimensions}px`;
+    gridDiv.style.height = `${squareDimensions}px`;
     gridDiv.addEventListener("mouseover", paintOnGrid);
 }
 
