@@ -1,24 +1,26 @@
 const DEFAULT_CANVAS_COLOR = "#f5f2df";
-const DEFAULT_BRUSH_COLOR = "#1a1918";
-const GRID_SIZE = 600;
-const colors = ["red", "blue", "lime", "yellow", "magenta", "cyan", "white"];
-
+const DEFAULT_BRUSH_COLOR  = "#1a1918";
+const GRID_SIZE            = 600;
+const COLORS               = ["red", "blue", "lime", 
+                              "yellow", "magenta", "cyan", "white"];
 let rainbowMode = false;
 
+const rainbowModeButton = document.querySelector("#rainbow-button")
 const gridContainer = document.querySelector(".grid-container");
 const setGridButton = document.querySelector("#set-grid-button");
 const resetButton = document.querySelector("#reset-button");
-const rainbowModeButton = document.querySelector("#rainbow-button")
 const gridDivs = gridContainer.children;
 
-setGridButton.onclick = setGrid
 resetButton.onclick = clearGrid
+setGridButton.onclick = setGrid
 rainbowModeButton.onclick = setRainbowMode
 
 function setGrid(divsPerSide) {
     divsPerSide === "default" ? divsPerSide = 16 : divsPerSide = promptDivAmount();
+
     let totalDivs = (divsPerSide * divsPerSide) - 1;
     let squareDimensions = GRID_SIZE / divsPerSide
+    
     gridContainer.innerHTML = "";
 
     for (let i = 0; i <= totalDivs; i++) {
@@ -26,12 +28,12 @@ function setGrid(divsPerSide) {
     }
 }
 
-function paintOnGrid(e) {
-    if (rainbowMode) {
-        e.target.style.backgroundColor = getRandomColor();
-    } else {
-        e.target.style.backgroundColor = DEFAULT_BRUSH_COLOR;
-    }
+function addDiv(squareDimensions) {
+    const gridDiv = document.createElement("div");
+    gridContainer.appendChild(gridDiv);
+    gridDiv.style.width  = `${squareDimensions}px`;
+    gridDiv.style.height = `${squareDimensions}px`;
+    gridDiv.addEventListener("mouseover", paintOnGrid);
 }
 
 function promptDivAmount() {
@@ -45,12 +47,12 @@ function promptDivAmount() {
     return divsPerSide;
 }
 
-function addDiv(squareDimensions) {
-    const gridDiv = document.createElement("div");
-    gridContainer.appendChild(gridDiv);
-    gridDiv.style.width = `${squareDimensions}px`;
-    gridDiv.style.height = `${squareDimensions}px`;
-    gridDiv.addEventListener("mouseover", paintOnGrid);
+function paintOnGrid(e) {
+    if (rainbowMode) {
+        e.target.style.backgroundColor = getRandomColor();
+    } else {
+        e.target.style.backgroundColor = DEFAULT_BRUSH_COLOR;
+    }
 }
 
 function setRainbowMode() {
@@ -58,8 +60,7 @@ function setRainbowMode() {
 }
 
 function getRandomColor() {
-    let randomNumber = Math.floor(Math.random() * 7)
-    return colors[randomNumber];
+    return COLORS[Math.floor(Math.random() * 7)];
 }
 
 function clearGrid() {
